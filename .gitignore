@@ -4,3 +4,6 @@ _site/
 .jekyll-metadata
 .DS_Store
 .idea
+# Benchmark tarball extract (do not commit)
+oxipng/
+benchmark_results.tar.gz
