@@ -34,3 +34,15 @@
 ---
 
 *Data from files: `results_nightly-2026-02-20`, `results_nightly-2020-01-30`, `run_info.txt`.*
+
+---
+
+## Why these Rust versions
+
+- `nightly-2020-01-30`: baseline near oxipng’s historical MSRV (Rust 1.41) to show an early starting point.
+- `nightly-2021-03-01`, `nightly-2021-06-01`, `nightly-2021-08-01`: 2021 checkpoints capture mid-cycle optimizer/MIR and LLVM updates.
+- `nightly-2022-09-01`: mid-2022 anchor to see gains after 2021.
+- `nightly-2023-01-01`, `nightly-2023-06-01`: early and mid-2023 snapshots to track incremental codegen improvements.
+- `nightly-2024-06-01`, `nightly-2024-12-01`: early/late 2024 to observe year-over-year deltas.
+- `nightly-2025-06-01`, `nightly-2025-09-01`, `nightly-2025-12-01`: mid/late 2025 spread to catch newer LLVM and Rust backend work.
+- `nightly-2026-01-01`, `nightly-2026-02-24`: near-tip compilers to compare the most recent optimizations against older baselines.
