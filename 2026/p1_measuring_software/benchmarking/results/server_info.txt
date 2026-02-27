@@ -1,0 +1,15 @@
+Test environment (server)
+-------------------------
+- CPU: Intel(R) Core(TM) i7-6700 @ 3.40GHz, 4 cores / 8 threads (max 4.0 GHz), governor: powersave
+- Memory: 32 GiB RAM, 15 GiB swap
+- Kernel: Linux 5.15.0-170-generic (Ubuntu 22.04.5 LTS jammy)
+- Perf: version 5.15.196, perf_event_paranoid = -1
+- Disk (/): 452G total, 391G free
+- Rust toolchains used/available: nightly-2020-01-30, nightly-2020-06-01, nightly-2021-03-01, nightly-2021-06-01, nightly-2021-08-01, nightly-2022-09-01, nightly-2023-01-01, nightly-2023-06-01, nightly-2024-06-01, nightly-2024-12-01, nightly-2025-06-01, nightly-2025-09-01, nightly-2025-12-01, nightly-2026-01-01, nightly-2026-02-20, nightly-2026-02-24 (default toolchain: stable)
+
+Run settings
+------------
+- Warm-up: one uncaptured bench pass per toolchain (build + run) before measuring.
+- Measurement command: `perf stat -e power/energy-pkg/` around `cargo +<toolchain> bench --locked --bench reductions`.
+- Repetitions per version: typically RUNS=20.
+- Pause between runs: ~120 seconds to let CPU temperature settle.
