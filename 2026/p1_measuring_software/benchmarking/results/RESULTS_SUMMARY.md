@@ -74,9 +74,3 @@ Using all `300` runs (`15` toolchains x `20` runs):
 Interpretation: toolchain version has a statistically significant effect on both energy and runtime, and energy is very strongly linearly associated with runtime in this benchmark.
 
 ---
-
-## Caveats
-
-- `power/energy-pkg/` measures CPU package energy only, not whole-system energy.
-- Results are machine-specific (CPU, governor, kernel, background load).
-- Even with 20 runs, benchmark noise exists; distributions (violin/box plots) should be checked together with means.
