@@ -20,3 +20,4 @@ docker run -p 4000:4000 -v $(pwd):/myapp -it sse-site
 
 The website should then be available at <http://localhost:4000/course_sustainableSE/2025/>.
 (and only at this link, replacing localhost by an ip address will not work.)
+# tud-sse-reproducibility
