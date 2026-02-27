@@ -7,6 +7,8 @@ This folder contains the benchmarking work for the 2026 P1 "Measuring Software" 
 | File / folder | Description |
 |---------------|-------------|
 | `run_oxipng_benchmarks.sh` | Script that runs energy benchmarks with `perf` (power/energy-pkg) for several Rust nightlies. |
+| `plot_benchmarks.py` | Parses `results_nightly-*` files and creates Matplotlib violin+box visualizations for energy and runtime. |
+| `run_stats.py` | Runs ANOVA and linear regression on `results_nightly-*_run*`, writes a stats summary, Tukey CSV outputs, and regression plot. |
 | `results/` | Place to store or link benchmark result files (e.g. from server runs) so they’re in one place. |
 
 ## Work done so far
@@ -39,6 +41,40 @@ The script will create a timestamped folder inside the cloned `oxipng` repo (e.g
 
 - **In this repo:** Put summary files or selected `results_*` outputs in `results/` and commit.
 - **Elsewhere:** You can also keep full runs on a server or in a separate repo and link that from the P1 report.
+
+## Create box/violin visualizations
+
+Run from the repository root:
+
+```bash
+python3 benchmarking/plot_benchmarks.py
+```
+
+If Matplotlib is missing:
+
+```bash
+python3 -m pip install --user matplotlib
+```
+
+Outputs are written to `benchmarking/results/plots/`:
+
+- `benchmark_samples.csv`
+- `energy_violin_box.png`
+- `time_violin_box.png`
+- `energy_vs_time_versions.png`
+
+## Run ANOVA and regression
+
+```bash
+python3 benchmarking/run_stats.py
+```
+
+Outputs are written to `benchmarking/results/stats/`:
+
+- `stats_summary.md`
+- `energy_time_regression.png`
+- `anova_tukey_energy.csv`
+- `anova_tukey_time.csv`
 
 ---
 
